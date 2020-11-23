@@ -108,7 +108,36 @@
 		</div>
 	</div>
 	
-
+		<div id="fh5co-pricing">
+		<div class="container">
+			<div class="row animate-box">
+				<div class="col-md-8 col-md-offset-2 text-center fh5co-heading">
+					<h2>VOS PROGRAMMES</h2>
+				</div>
+			</div>
+			<div class="row">
+				<div class="pricing">
+				{% for program in programs %}
+					<div class="col-md-4 animate-box">
+						<div class="price-box">
+							<h2 class="pricing-plan">{{program.category}}</h2>
+							<div class="price"><sup class="currency">€</sup>{{ (program.price / 100) |number_format(2, ',', '.')}}</div>
+							<ul class="classes">
+								<li></li>
+								<li class="color">{{program.name}}</li>
+								<li>{{program.number}} séances / semaine</li>
+								<li class="color">Coachs Diplômés</li>
+								<li>Suivi de vos perfomances</li>
+								<li class="color">Groupe Facebook privé</li>
+							</ul>
+							<a href="#" class="btn btn-select-plan btn-sm">Choisir ce programme</a>
+						</div>
+					</div>
+					{% endfor %}
+				</div>
+			</div>
+		</div>
+	</div>
 
 
 	<div id="fh5co-blog" class="fh5co-bg-section">

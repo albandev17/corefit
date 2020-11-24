@@ -1,0 +1,35 @@
+{% extends 'base.html.twig' %}
+
+{% block title %}Nos programmes - CoreFit{% endblock %}
+
+{% block content %}
+<div class="container-program">
+        <div class="row">
+            <div class="col-md-3">
+                <h3>Filtrer</h3>
+                {{ form(form) }}
+            </div>
+            <div class="col-md-9">
+                <h1 class="text-center">Nos programmes</h1>
+        
+            <div class="row product-container">
+                {% for program in programs %}
+                        <div class="col-md-4 animate-box">
+						<div class="price-box">
+							<h2 class="pricing-plan">{{program.category}}</h2>
+							<div class="price"><sup class="currency">€</sup>{{ (program.price / 100) |number_format(2, ',', '.')}}</div>
+							<ul class="classes">
+								<li></li>
+								<li class="color">{{program.name}}</li>
+								<li>{{program.number}} séances / semaine</li>
+								<li class="color">Coachs Diplômés</li>
+								<li>Suivi de vos perfomances</li>
+								<li class="color">Groupe Facebook privé</li>
+							</ul>
+							<a href="#" class="btn btn-select-plan btn-sm">Choisir ce programme</a>
+						</div>
+					</div>
+                {% endfor %}
+        </div>
+</div>
+{% endblock %}

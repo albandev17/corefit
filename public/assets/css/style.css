@@ -76,6 +76,9 @@ h1, h2, h3, h4, h5, h6, figure {
 .block-info{
   margin: 100px auto;
 }
+.container-program{
+  margin: 0 20px;
+}
 ::-webkit-selection {
   color: #fff;
   background: #F85A16;

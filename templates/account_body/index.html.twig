@@ -1,0 +1,46 @@
+{% extends 'base.html.twig' %}
+
+{% block title %}Informations personelles - CoreFit{% endblock %}
+
+{% block content %}
+{% if app.user.bodies|length == 0 %}
+    <p class="text-center">Vous n'avez pas encore ajouté d'informations personnelles. Pour en ajouter, veuillez <a href="{{path('account_body__add')}}">cliquer ici</a></p>
+{% else %}
+    {% for body in app.user.bodies %}
+
+    <div class="container block-info">
+        <table class="table">
+            <thead class="thead-dark">
+                <tr>
+                <th scope="col">{{app.user.firstname}}</th>
+                <th scope="col">{{body.name}}</th>
+                </tr>
+            </thead>
+            <tbody>
+                <tr>
+                    <th scope="row">Taille</th>
+                    <td>{{body.taille}} cm</td>
+                </tr>
+                <tr>
+                    <th scope="row">Poids</th>
+                    <td>{{body.poids}} kg</td>
+                </tr>
+                <tr>
+                    <th scope="row">Tour de bras</th>
+                    <td>{{body.bras}} cm</td>
+                </tr>
+                <tr>
+                    <th scope="row">Tour de ventre</th>
+                    <td>{{body.ventre}} cm</td>
+                </tr>
+                <tr>
+                    <th scope="row">Tour de cuisse</th>
+                    <td>{{body.cuisse}} cm</td>
+                </tr>
+            </tbody>
+        </table>
+        <a class="btn btn-block btn-primary btn-outline btn-sm" href="{{ path('account_body__edit', { 'id' : body.id }) }}">Modifier</a><br><a class="btn btn-block btn-primary btn-outline btn-sm" href="{{ path('account_body__delete', { 'id' : body.id }) }}">Supprimer</a><br><a class="btn btn-block btn-primary btn-outline btn-sm" href="{{ path('account_body__add')}}">Ajouter un objectif</a>
+    </div>
+    {% endfor %}
+{% endif %}
+{% endblock %}

@@ -57,8 +57,11 @@ a:hover, a:active, a:focus {
 p {
   margin-bottom: 20px;
 }
-
-h1, h2, h3, h4, h5, h6, figure {
+h1{
+  font-family: 'Permanent Marker', cursive;
+  color:#2c3e50;
+}
+h2, h3, h4, h5, h6, figure {
   color: #000;
   font-family: "Work Sans", Arial, sans-serif;
   font-weight: 400;
@@ -78,6 +81,10 @@ h1, h2, h3, h4, h5, h6, figure {
 }
 .container-program{
   margin: 0 20px;
+}
+.program-extract{
+  font-family: 'Permanent Marker', cursive;
+  color:#2c3e50;
 }
 ::-webkit-selection {
   color: #fff;

@@ -36,12 +36,12 @@
 	<div id="page">
 	<nav class="fh5co-nav" role="navigation">
 		<div class="top-menu">
-			<div class="container">
+			<div class="container-fluid">
 				<div class="row">
 					<div class="col-md-2">
 						<div id="fh5co-logo"><a href="{{path('home')}}">CoreFit<span>.</span></a></div>
 					</div>
-					<div class="col-md-6 text-right menu-1">
+					<div class="col-md-5 text-right menu-1">
 						<ul>
 							<li><a href="{{path('programs')}}">Programmes</a></li>
 							<li><a href="">Coachs</a></li>
@@ -49,8 +49,11 @@
 							<li><a href="">Contact</a></li>
 						</ul>
 					</div>
-                    <div class="col-md-4 text-right menu-1">
+                    <div class="col-md-5 text-right menu-1">
 					   <ul>
+					   		<li>
+                                <a href="{{path('cart')}}" alt="Mon panier"><i class="fas fa-shopping-bag"></i></a>
+                            </li>
                         {% if app.user %}
 							<li>
                                 <a href="{{ path('account') }}"><i class="far fa-user-circle"></i> <small>{{app.user.firstname}}</small></a>

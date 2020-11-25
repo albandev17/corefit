@@ -1,0 +1,47 @@
+{% extends 'base.html.twig' %}
+
+{% block title %}Mon panier - CoreFit{% endblock %}
+
+{% block content %}
+    <h1 class="text-center">Mon Panier</h1>
+        <p class="text-center">Retrouvez l'ensemble des produits que vous avez ajouté à votre panier.</p>
+        {% if cart|length > 0 %}
+        <div class="container-program">
+            <table class="table mt-5">
+                <thead>
+                    <tr>
+                    <th scope="col">Programme</th>
+                    <th scope="col">Quantité</th>
+                    <th scope="col">Prix</th>
+                    <th scope="col">Supprimer</th>
+                    </tr>
+                </thead>
+                    <tbody>
+                    {% set total = null %}
+                    {% for program in cart %}
+                        <tr>
+                            <td>{{ program.program.name }}</td>
+                            <td>x {{ program.quantity }}</td>
+                            <td>{{ (program.program.price / 100) |number_format(2, ',', '.')}} €</td>
+                            <td>
+                                <a href="{{ path('delete_to_cart', {'id' : program.program.id }) }}">
+                                    <img src="{{ asset('assets/images/trash.png') }}" height="18px" alt="Supprimer mon produit">
+                                </a>
+                            </td>
+                        </tr>
+                        {% set total = total + (program.program.price * program.quantity) %}
+                    {% endfor %}
+                    </tbody>
+            </table>
+
+            <div class="text-right mb-5">
+                <b>Nombre de produits : </b>{{ cart|length }}<br>
+                <b>Total de mon panier : </b> {{ (total / 100 ) |number_format(2, ',', '.')}} €
+            </div>
+            <a href="" class="btn btn-success btn-cart">Valider mon panier</a>
+        </div>
+    {% else %}
+    <hr>
+        <p class="text-center">Votre panier est vide</p>
+    {% endif %}
+{% endblock %}

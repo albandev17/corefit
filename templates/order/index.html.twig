@@ -1,0 +1,36 @@
+{% extends 'base.html.twig' %}
+
+{% block title %}Hello OrderController!{% endblock %}
+
+{% block content %}
+    <h1 class="text-center">Je passe ma commande</h1>
+
+    <div class="row">
+        <div class="col-md-6">
+            {% for program in cart %}
+						<div class="price-box">
+                            <div class="price"><sup class="currency">€</sup>{{ (program.program.price / 100) |number_format(2, ',', '.')}}</div>
+							<ul class="classes">
+								<li></li>
+								<li class="color">{{program.program.name}}</li>
+								<li>{{program.program.number}} séances / semaine</li>
+								<li class="color">Coachs Diplômés</li>
+								<li>Suivi de vos perfomances</li>
+								<li class="color">Groupe Facebook privé</li>
+							</ul>
+                        </div>
+            {% endfor %}
+        </div>
+        <div class="col-md-6 text-center">
+            <p class="text-center">Récapitulatif de ma commande</p>
+            {% for program in cart %}
+                <div class="row">
+                    <div class"col-md-8 my-auto">{{ program.program.name }}<br></div>
+                    <div class"col-md-2 my-auto"><small>{{ program.program.description}}</small></div>
+                    <div class"col-md-2 my-auto"> {{program.quantity}} programme</div>
+                </div>
+            {% endfor %}
+        
+        </div>
+    </div>
+{% endblock %}

@@ -26,7 +26,7 @@ class ProgramCrudController extends AbstractCrudController
             SlugField::new('slug')->setTargetFieldName('name'),
             TextareaField::new('description'),
             TextField::new('number','nombres de séances'),
-            TextEditorField::new('seance','Séances'),
+            TextareaField::new('seance','Séances'),
             AssociationField::new('category','Categories'),
             MoneyField::new('price','Prix')->setCurrency('EUR'),
         ];

@@ -50,13 +50,13 @@
 
 	<div id="fh5co-trainer">
 		<div class="container">
-			<div class="row animate-box">
+			<div class="row">
 				<div class="col-md-8 col-md-offset-2 text-center fh5co-heading">
 					<h2>VOS COACHS</h2>
 				</div>
 			</div>
 			<div class="row">
-				<div class="col-md-4 col-sm-4 animate-box">
+				<div class="col-md-4 col-sm-4">
 					<div class="trainer">
 						<a href="#"><img class="img-responsive" src="{{asset('assets/images/trainer-1.jpg')}}" alt="trainer"></a>
 						<div class="title">
@@ -72,7 +72,7 @@
 						</div>
 					</div>
 				</div>
-				<div class="col-md-4 col-sm-4 animate-box">
+				<div class="col-md-4 col-sm-4">
 					<div class="trainer">
 						<a href="#"><img class="img-responsive" src="{{asset('assets/images/trainer-2.jpg')}}" alt="trainer"></a>
 						<div class="title">
@@ -88,7 +88,7 @@
 						</div>
 					</div>
 				</div>
-				<div class="col-md-4 col-sm-4 animate-box">
+				<div class="col-md-4 col-sm-4">
 					<div class="trainer">
 						<a href="#"><img class="img-responsive" src="{{asset('assets/images/trainer-3.jpg')}}" alt="trainer"></a>
 						<div class="title">
@@ -110,7 +110,7 @@
 	
 		<div id="fh5co-pricing">
 		<div class="container">
-			<div class="row animate-box">
+			<div class="row">
 				<div class="col-md-8 col-md-offset-2 text-center fh5co-heading">
 					<h2>VOS PROGRAMMES</h2>
 				</div>
@@ -118,7 +118,7 @@
 			<div class="row">
 				<div class="pricing">
 				{% for program in programs %}
-					<div class="col-md-4 animate-box">
+					<div class="col-md-4">
 						<div class="price-box">
 							<h2 class="pricing-plan">{{program.category}}</h2>
 							<div class="price"><sup class="currency">€</sup>{{ (program.price / 100) |number_format(2, ',', '.')}}</div>
@@ -143,14 +143,13 @@
 	<div id="fh5co-blog" class="fh5co-bg-section">
 		<div class="container">
 			<div class="row">
-				<div class="col-md-8 col-md-offset-2 text-center fh5co-heading animate-box">
+				<div class="col-md-8 col-md-offset-2 text-center fh5co-heading">
 					<h2>Blog</h2>
 				</div>
 			</div>
 			<div class="row row-bottom-padded-md">
 				<div class="col-lg-4 col-md-4">
 					<div class="fh5co-blog animate-box">
-						<a href="#"><img class="img-responsive" src="images/gallery-4.jpg" alt=""></a>
 						<div class="blog-text">
 							<h3><a href=""#>45 Minimal Worksspace Rooms for Web Savvys</a></h3>
 							<span class="posted_on">Sep. 15th</span>
@@ -161,7 +160,6 @@
 				</div>
 				<div class="col-lg-4 col-md-4">
 					<div class="fh5co-blog animate-box">
-						<a href="#"><img class="img-responsive" src="images/gallery-2.jpg" alt=""></a>
 						<div class="blog-text">
 							<h3><a href=""#>45 Minimal Worksspace Rooms for Web Savvys</a></h3>
 							<span class="posted_on">Sep. 15th</span>
@@ -172,7 +170,6 @@
 				</div>
 				<div class="col-lg-4 col-md-4">
 					<div class="fh5co-blog animate-box">
-						<a href="#"><img class="img-responsive" src="images/gallery-3.jpg" alt=""></a>
 						<div class="blog-text">
 							<h3><a href=""#>45 Minimal Worksspace Rooms for Web Savvys</a></h3>
 							<span class="posted_on">Sep. 15th</span>

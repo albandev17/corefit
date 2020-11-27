@@ -4,22 +4,18 @@
 
 {% block content %}
     <h1 class="text-center">Je passe ma commande</h1>
-
+<div class="container-program">
     <div class="row">
-        <div class="col-md-6">
-            {% for program in cart %}
-						<div class="price-box">
-                            <div class="price"><sup class="currency">€</sup>{{ (program.program.price / 100) |number_format(2, ',', '.')}}</div>
-							<ul class="classes">
-								<li></li>
-								<li class="color">{{program.program.name}}</li>
-								<li>{{program.program.number}} séances / semaine</li>
-								<li class="color">Coachs Diplômés</li>
-								<li>Suivi de vos perfomances</li>
-								<li class="color">Groupe Facebook privé</li>
-							</ul>
-                        </div>
-            {% endfor %}
+            <div class="col-md-6">
+            <p class="text-center">Adresse de facturation</p>
+           {% set formHtml %}
+                {{form_start(form, {action:path('order_recap')})}}
+                    {{ form_label(form.adresses, "Choisissez votre adresse de livraison") }}
+                    <a href="{{ path('account_adress_add') }}" >Ajouter une nouvelle adresse</a>
+                {{form_end(form)}}
+            {% endset %}
+
+            {{ formHtml|replace({'[br]' : '<br/>'})|raw}}
         </div>
         <div class="col-md-6 text-center">
             <p class="text-center">Récapitulatif de ma commande</p>
@@ -33,4 +29,5 @@
         
         </div>
     </div>
+</div>
 {% endblock %}

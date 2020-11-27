@@ -1,0 +1,34 @@
+{% extends 'base.html.twig' %}
+
+{% block title %}Valider ma commande - La Boutique Française{% endblock %}
+
+{% block content %}
+<div class="text-center">
+    <h2>Mon Récapitulatif</h2>
+    <p>Vérifiez vos informations avant de payer votre commande.</p>
+</div>
+    <hr>
+        <div class="text-center mb-2"><b>Ma commande</b></div>
+        {% set total = null %}
+            {% for program in cart %}
+						<div class="price-box">
+							<h2 class="pricing-plan">{{program.program.category}}</h2>
+							<div class="price"><sup class="currency">€</sup>{{ (program.program.price / 100) |number_format(2, ',', '.')}}</div>
+							<ul class="classes">
+								<li></li>
+								<li class="color">{{program.program.name}}</li>
+								<li>{{program.program.number}} séances / semaine</li>
+								<li class="color">Coachs Diplômés</li>
+								<li>Suivi de vos perfomances</li>
+								<li class="color">Groupe Facebook privé</li>
+							</ul>
+						</div>
+            </div>
+                {% set total = total + (program.program.price * program.quantity) %}
+            {% endfor %}
+            <hr>
+            <strong>Total de mon panier :</strong> </b> {{ (total / 100 ) |number_format(2, ',', '.')}} €
+            <hr>
+        <a class="btn btn-block btn-success mt-5" >Payer | {{ (total / 100 ) |number_format(2, ',', '.')}} €</a>
+    </div>
+{% endblock %}

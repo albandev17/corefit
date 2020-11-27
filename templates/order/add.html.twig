@@ -8,7 +8,8 @@
     <p>Vérifiez vos informations avant de payer votre commande.</p>
 </div>
     <hr>
-        <div class="text-center mb-2"><b>Ma commande</b></div>
+    <div class="container-program">
+        <div class="text-center"><b>Ma commande</b></div>
         {% set total = null %}
             {% for program in cart %}
 						<div class="price-box">
@@ -23,7 +24,6 @@
 								<li class="color">Groupe Facebook privé</li>
 							</ul>
 						</div>
-            </div>
                 {% set total = total + (program.program.price * program.quantity) %}
             {% endfor %}
             <hr>
@@ -31,4 +31,5 @@
             <hr>
         <a class="btn btn-block btn-success mt-5" >Payer | {{ (total / 100 ) |number_format(2, ',', '.')}} €</a>
     </div>
+</div>
 {% endblock %}
